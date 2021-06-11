@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace hw1
+namespace c_sharp_homeworks
 {
-    class Program
+    class hw1
     {
         public static void sum(int num1, int num2, out int? result)
         {
