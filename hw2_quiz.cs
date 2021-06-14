@@ -54,13 +54,13 @@ namespace hw
                     "Unlikely Classes, Structers are usually used for large amount of data's"
                 },
                 {
-                    "8. What is the result of following expression:\nstring nullString = (string) null;\nConsole.WriteLine(nullString is string)",
+                    "8. What is the result of following expression:\n\nstring nullString = (string) null;\nConsole.WriteLine(nullString is string)\n",
                     "False",
                     "True",
                     "Invalid value exception"
                 },
                 {
-                    "9. What is the result of following expression:\nstring x = new string(new char[0]);\nstring y = new string(new char[0]);\nConsole.WriteLine(object.ReferenceEquals(x, y));",
+                    "9. What is the result of following expression:\n\nstring x = new string(new char[0]);\nstring y = new string(new char[0]);\nConsole.WriteLine(object.ReferenceEquals(x, y));\n",
                     "True",
                     "False",
                     "NullReferenceException"
@@ -73,29 +73,41 @@ namespace hw
                 }
             };
 
-        static byte quiz_num = 0;
-        static byte c_index = 0;
+        static byte score = 0, quiz_num = 0, c_index = 0, w_index = 0;
         static Random random = new Random();
         static bool[] check = new bool[col-1];
         static byte[] options = new byte[col-1];
+
         static bool input(char choice){
-            //byte i = 0, j = 0;
-            //System.Console.WriteLine(questions[i,j]);
             if((int) choice == c_index+97) return true;
-            else return false;
+            w_index = Convert.ToByte(choice - 97);
+            return false;
         }
         
-        static void display(bool format = false) {
+        static void display(bool format = false, bool result = false) {
             Console.Clear();
+            System.Console.Write("Level: ");
+            if(quiz_num > 8) System.Console.WriteLine("4 (FINAL LEVEL)");
+            else if(quiz_num > 5) System.Console.WriteLine("3 (Hard)");
+            else if(quiz_num > 2) System.Console.WriteLine("2 (Medium)");
+            else System.Console.WriteLine("1 (Easy)");
             System.Console.WriteLine(questions[quiz_num,0]);
             for(byte i = 1; i < col; i++) {
-                if(format == true && i == c_index) Console.BackgroundColor = ConsoleColor.DarkBlue;
+                if(format == true) {
+                    if(result == true && i == c_index + 1) Console.BackgroundColor = ConsoleColor.Green;
+                    if(result == false) {
+                        if(i == c_index + 1) Console.BackgroundColor = ConsoleColor.Gray;
+                        if(i == w_index + 1) Console.ForegroundColor = ConsoleColor.Red;
+                    }
+                }
                 System.Console.WriteLine($"{(char)(96 + i)}) {questions[quiz_num, options[i-1]+1]}");
                 Console.ResetColor();
             }
+            System.Console.WriteLine();
+            System.Console.WriteLine($"Score: {score}");
         }
 
-        static void generate() {
+        static void play() {
             for(byte i = 0; i < col-1; i++){
                 check[i] = false;
                 options[i] = i;
@@ -115,22 +127,27 @@ namespace hw
 
             display();
 
-            if(input(Console.ReadKey(intercept: true).KeyChar) || true) {
-                display(true);
-                System.Threading.Thread.Sleep(1200);
+            if(input(Console.ReadKey(intercept: true).KeyChar)) {
+                score+=10;
+                display(true, true);
+            }
+            else {
+                if (score>=10) score-=10;
+                display(true, false);
             }
 
-        }
+            quiz_num++;
 
-        static void result() {
-            
+            System.Threading.Thread.Sleep(1400);
+
         }
 
         static void Main(string[] args)
-        { 
-            while(true){
-                generate();
+        {
+            while(quiz_num != row){
+                play();
             }
+            System.Console.WriteLine($"Quiz finished. Your score is: {score}");
         }
 
     }
