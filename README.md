@@ -498,5 +498,5 @@
   
   
   <pre>
-  <h1> Çox aşağı düşdüz, təcili əlinizdəki mouse-u buraxın<h1>
+  <h2> Çox aşağı düşdüz, təcili əlinizdəki mouse-u buraxın<h2>
   <img src="/pictures_dont_enter_thank_you/Photo on 20.06.21 at 01.49.jpg">
