@@ -1,7 +1,7 @@
 
 using System;
 
-namespace c_sharp_homeworks
+namespace hw2
 {
     class Program
     {
@@ -102,7 +102,7 @@ namespace c_sharp_homeworks
             {
                 //System.Console.WriteLine(f.numerator);
                 //System.Console.WriteLine(f.denominator);
-                int divider = f.numerator;
+                int divider = (f.numerator > f.denominator) ? f.denominator : f.numerator;
                 if (f.numerator < 0 && f.denominator < 0)
                 {
                     f.numerator = f.numerator * - 1;
