@@ -2,7 +2,9 @@
 
 <h3> Hər dəfə ev tapşırığlarımı yoxlamağa gələndə sizi qarşılamağ üçün bu README faylını düzəltdim 😊 <h3>
  
-<p>Bu günün mesajı: Əgər ev tapşırığlarını yoxlamağdan yorulmusunuzsa bir qədər ara verib limonlu çay için ☕️🍋😍 <p>
+<p>Birinci günün mesajı: Əgər ev tapşırığlarını yoxlamağdan yorulmusunuzsa bir qədər ara verib limonlu çay için ☕️🍋😍 <p>
+ 
+<p>Bu günün mesajı: Müəllim xaiş eliyirəm Zahidin balından 3 bal kesib mene kristal atında 😅<p>
   
   <pre>
   
