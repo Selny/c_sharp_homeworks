@@ -5,7 +5,7 @@
 <p>Birinci günün mesajı: Əgər ev tapşırığlarını yoxlamağdan yorulmusunuzsa bir qədər ara verib limonlu çay için ☕️🍋😍 <p>
  
 <p>Bu günün mesajı: Müəllim xaiş eliyirəm Zahidin balından 3 bal kesib mene kristal atında 😅<p>
-  
+<p> Muellim hefteler sonra sozumu tutdum ve iki dasin arasinda ev tapsiriqimi catdirdim <p>
   <pre>
   
   
